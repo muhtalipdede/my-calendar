@@ -12,7 +12,7 @@ Bu doküman, projeye yeni başlayan yazılım mühendisi stajyeri için sprint b
 
 **Tahmini süre:** 3–4 hafta (part-time)
 
-**Güncel durum:** Sprint 0–4 tamamlandı. Sprint 5'ten devam et.
+**Güncel durum:** Sprint 0–5 tamamlandı. Sprint 6'dan devam et.
 
 ---
 
@@ -204,32 +204,34 @@ Bu doküman, projeye yeni başlayan yazılım mühendisi stajyeri için sprint b
 
 ### Görevler
 
-- [ ] **5.1** `WorkflowCard` bileşeni
+- [x] **5.1** `WorkflowCard` bileşeni
   - Başlık, açıklama, ilerleme çubuğu (X/Y step tamamlandı)
   - Aktif step vurgusu
   - Status badge (active / completed)
-- [ ] **5.2** `StepItem` bileşeni
+- [x] **5.2** `StepItem` bileşeni
   - Sıra numarası, başlık, durum badge
   - Due date (varsa), overdue vurgusu
   - Tamamla butonu / checkbox
   - Not alanı (expand/collapse)
-- [ ] **5.3** `StepList` bileşeni — sıralı step listesi
-- [ ] **5.4** `WorkflowForm` modal
+- [x] **5.3** `StepList` bileşeni — sıralı step listesi
+- [x] **5.4** `WorkflowForm` modal
   - Başlık*, açıklama
   - Dinamik step ekleme/çıkarma (en az 2 step)
   - Her step: başlık*, opsiyonel due date
-- [ ] **5.5** Süreçler listesi sayfası (`src/app/workflows/page.tsx`)
+- [x] **5.5** Süreçler listesi sayfası (`src/app/workflows/page.tsx`)
   - Aktif / tamamlanmış filtre
   - WorkflowCard grid
   - "Yeni Süreç" butonu
-- [ ] **5.6** Süreç detay sayfası (`src/app/workflows/[id]/page.tsx`)
+- [x] **5.6** Süreç detay sayfası (`src/app/workflows/[id]/page.tsx`)
   - Workflow başlık + açıklama
   - StepList — step tamamlama, not ekleme
   - Genel ilerleme göstergesi
   - Tüm step'ler tamamlanınca workflow status → completed
-- [ ] **5.7** Dashboard ActiveWorkflows bölümünü canlı state'e bağla
+- [x] **5.7** Dashboard ActiveWorkflows bölümünü canlı state'e bağla
 
-**Kabul kriteri:** Workflow oluşturulabiliyor. Step'ler bağımsız tamamlanabiliyor. İlerleme doğru hesaplanıyor. Not eklenebiliyor.
+**Kabul kriteri:** ✅ Workflow oluşturulabiliyor. Step'ler bağımsız tamamlanabiliyor. İlerleme doğru hesaplanıyor. Not eklenebiliyor.
+
+📖 Detaylı açıklama → [`docs/completed/sprint-5-workflow-sistemi.md`](./completed/sprint-5-workflow-sistemi.md)
 
 ---
 

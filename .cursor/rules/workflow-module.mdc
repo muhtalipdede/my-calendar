@@ -1,6 +1,6 @@
 ---
-description: Workflow modülü — multi-step süreç yönetimi (Sprint 5)
-globs: src/components/workflows/**,src/app/workflows/**
+description: Workflow modülü — multi-step süreç yönetimi
+globs: src/components/workflows/**,src/app/workflows/**,src/lib/utils/workflow.ts
 alwaysApply: false
 ---
 
@@ -8,29 +8,20 @@ alwaysApply: false
 
 Ürünün fark yaratan özelliği: görev = aşamalı süreç.
 
-## Hedef bileşenler (Sprint 5)
+## Bileşenler (Sprint 5 ✅)
 
 - `WorkflowCard` — liste kartı, ilerleme çubuğu
-- `StepItem` — tamamla, not, overdue vurgusu
+- `StepItem` — checkbox, not, devam et, overdue
 - `StepList` — sıralı adımlar
-- `WorkflowForm` — dinamik step ekleme/çıkarma (min 2)
+- `WorkflowForm` — dinamik step (min 2)
 
-## Pattern
+## State
 
-`tasks/` ve `calendar/` ile aynı CRUD yapısı:
-`useWorkflows()` → `WorkflowForm` + `ConfirmDialog` + liste/detay sayfaları
+`useWorkflows()` → `addWorkflow`, `updateWorkflow`, `deleteWorkflow`, `updateStep`
 
-## Step tamamlanınca
+Step güncelleme: `applyStepUpdate()` in `src/lib/utils/workflow.ts`
+Tüm adımlar bitince → `workflow.status: "completed"`
 
-- `getWorkflowProgress()` ile ilerleme güncelle
-- Tüm step'ler `completed` → workflow `status: "completed"`
+## Yeni süreç oluştururken
 
-## Nested update
-
-Step güncellemesi `updateWorkflow(id, { steps: [...] })` veya dedicated `updateStep(workflowId, stepId, updates)` — AppProvider'da tek yerden yönet.
-
-## Referans
-
-- Tip: `src/lib/types/workflow.ts`
-- Mock: `src/data/workflows.json`
-- Mevcut read-only: `src/app/workflows/page.tsx`, `[id]/page.tsx`
+`buildWorkflowSteps()` — adım id'leri, ilk adım `in_progress`, diğerleri `pending`

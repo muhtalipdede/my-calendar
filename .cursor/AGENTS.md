@@ -17,12 +17,12 @@ npm run build && npm run lint
 
 | Sprint | Konu | Durum |
 |--------|------|-------|
-| 0–4 | Kurulum, mock, dashboard, görev CRUD, takvim | ✅ |
-| **5** | Workflow CRUD + step yönetimi | 🔜 Sıradaki |
-| 6 | Hatırlatmalar | ⏳ |
+| 0–5 | Kurulum, mock, dashboard, görev, takvim, workflow | ✅ |
+| **6** | Hatırlatmalar CRUD | 🔜 Sıradaki |
+| 7 | Cilalama + MVP | ⏳ |
 | 7 | Cilalama + MVP | ⏳ |
 
-**MVP:** ~73% (40/55) — `docs/04-MVP-CHECKLIST.md`
+**MVP:** ~84% (46/55) — `docs/04-MVP-CHECKLIST.md`
 
 ## Agent için kritik dosyalar
 
@@ -50,7 +50,7 @@ npm run build && npm run lint
 - **Dashboard** — `src/components/dashboard/`, `src/app/page.tsx`
 - **Görevler** — CRUD: `src/components/tasks/`, `useTasks`
 - **Takvim** — FullCalendar CRUD: `src/components/calendar/`, `useEvents`
-- **Workflow** — read-only liste + detay; Sprint 5'te CRUD gelecek
+- **Workflow** — CRUD + step yönetimi: `src/components/workflows/`, `useWorkflows`
 - **Hatırlatmalar** — read-only liste; Sprint 6'da CRUD gelecek
 
 ## Yapma

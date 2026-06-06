@@ -17,7 +17,7 @@ Next.js 15 App Router · TypeScript strict · Tailwind CSS 4 · FullCalendar 6 �
 
 | Tamamlandı | Sıradaki |
 |------------|----------|
-| 0–4 (kurulum, mock, dashboard, görev CRUD, takvim) | **Sprint 5** — workflow CRUD + step yönetimi |
+| 0–5 (kurulum, mock, dashboard, görev, takvim, workflow) | **Sprint 6** — hatırlatmalar CRUD |
 
 Kaynak: `docs/03-INTERN-TASKS.md` · Biten sprint rehberleri: `docs/completed/`
 

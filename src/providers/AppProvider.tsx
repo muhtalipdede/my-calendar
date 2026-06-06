@@ -7,7 +7,14 @@ import {
   loadTasks,
   loadWorkflows,
 } from "@/lib/mock/loader";
-import type { CalendarEvent, Reminder, Task, Workflow } from "@/lib/types";
+import type {
+  CalendarEvent,
+  Reminder,
+  Task,
+  Workflow,
+  WorkflowStep,
+} from "@/lib/types";
+import { applyStepUpdate } from "@/lib/utils/workflow";
 
 interface AppContextValue {
   events: CalendarEvent[];
@@ -20,6 +27,16 @@ interface AppContextValue {
   addTask: (task: Omit<Task, "id" | "createdAt" | "updatedAt">) => void;
   updateTask: (id: string, updates: Partial<Task>) => void;
   deleteTask: (id: string) => void;
+  addWorkflow: (
+    workflow: Omit<Workflow, "id" | "createdAt" | "updatedAt">
+  ) => void;
+  updateWorkflow: (id: string, updates: Partial<Workflow>) => void;
+  deleteWorkflow: (id: string) => void;
+  updateStep: (
+    workflowId: string,
+    stepId: string,
+    updates: Partial<WorkflowStep>
+  ) => void;
 }
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -35,7 +52,7 @@ function createId(prefix: string, items: { id: string }[]): string {
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [events, setEvents] = useState<CalendarEvent[]>(() => loadEvents());
   const [tasks, setTasks] = useState<Task[]>(() => loadTasks());
-  const [workflows] = useState<Workflow[]>(() => loadWorkflows());
+  const [workflows, setWorkflows] = useState<Workflow[]>(() => loadWorkflows());
   const [reminders] = useState<Reminder[]>(() => loadReminders());
 
   const addEvent = (
@@ -108,6 +125,49 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
+  const addWorkflow = (
+    workflow: Omit<Workflow, "id" | "createdAt" | "updatedAt">
+  ) => {
+    const now = new Date().toISOString();
+    setWorkflows((prev) => [
+      ...prev,
+      {
+        ...workflow,
+        id: createId("wf", prev),
+        createdAt: now,
+        updatedAt: now,
+      },
+    ]);
+  };
+
+  const updateWorkflow = (id: string, updates: Partial<Workflow>) => {
+    setWorkflows((prev) =>
+      prev.map((workflow) =>
+        workflow.id === id
+          ? { ...workflow, ...updates, updatedAt: new Date().toISOString() }
+          : workflow
+      )
+    );
+  };
+
+  const deleteWorkflow = (id: string) => {
+    setWorkflows((prev) => prev.filter((workflow) => workflow.id !== id));
+  };
+
+  const updateStep = (
+    workflowId: string,
+    stepId: string,
+    updates: Partial<WorkflowStep>
+  ) => {
+    setWorkflows((prev) =>
+      prev.map((workflow) =>
+        workflow.id === workflowId
+          ? applyStepUpdate(workflow, stepId, updates)
+          : workflow
+      )
+    );
+  };
+
   const value = useMemo(
     () => ({
       events,
@@ -117,6 +177,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       addEvent,
       updateEvent,
       deleteEvent,
+      addWorkflow,
+      updateWorkflow,
+      deleteWorkflow,
+      updateStep,
       addTask,
       updateTask,
       deleteTask,

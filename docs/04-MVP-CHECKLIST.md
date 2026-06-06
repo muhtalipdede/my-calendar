@@ -2,7 +2,7 @@
 
 MVP'nin "bitti" sayılması için aşağıdaki tüm maddeler karşılanmalıdır.
 
-**Son güncelleme:** Sprint 4 tamamlandı (Takvim + Event CRUD)
+**Son güncelleme:** Sprint 5 tamamlandı (Workflow CRUD + step yönetimi)
 
 ---
 
@@ -46,16 +46,16 @@ MVP'nin "bitti" sayılması için aşağıdaki tüm maddeler karşılanmalıdır
 
 | # | Özellik | Durum |
 |---|---------|-------|
-| C1 | Workflow oluşturulabiliyor (başlık + step'ler) | ⬜ |
+| C1 | Workflow oluşturulabiliyor (başlık + step'ler) | ✅ |
 | C2 | Workflow listesi görüntüleniyor | ✅ |
 | C3 | Workflow detay sayfası çalışıyor | ✅ |
 | C4 | Step'ler sıralı gösteriliyor | ✅ |
-| C5 | Step tamamlanabiliyor | ⬜ |
-| C6 | Step'e not eklenebiliyor | ⬜ |
-| C7 | Step'e due date atanabiliyor | ⬜ |
+| C5 | Step tamamlanabiliyor | ✅ |
+| C6 | Step'e not eklenebiliyor | ✅ |
+| C7 | Step'e due date atanabiliyor | ✅ |
 | C8 | İlerleme çubuğu doğru hesaplanıyor (X/Y) | ✅ |
-| C9 | Tüm step'ler bitince workflow → completed | ⬜ |
-| C10 | Aktif / tamamlanmış filtre çalışıyor | ⬜ |
+| C9 | Tüm step'ler bitince workflow → completed | ✅ |
+| C10 | Aktif / tamamlanmış filtre çalışıyor | ✅ |
 
 ---
 
@@ -109,8 +109,8 @@ MVP'nin "bitti" sayılması için aşağıdaki tüm maddeler karşılanmalıdır
 |-------|--------|------------|-------|
 | Takvim | 11 | 11 | 100% |
 | Görevler | 11 | 11 | 100% |
-| Workflow | 10 | 4 | 40% |
+| Workflow | 10 | 10 | 100% |
 | Hatırlatmalar | 9 | 1 | 11% |
 | Dashboard | 6 | 6 | 100% |
 | Genel | 8 | 7 | 88% |
-| **Toplam** | **55** | **40** | **73%** |
+| **Toplam** | **55** | **46** | **84%** |

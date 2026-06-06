@@ -143,7 +143,7 @@ Tek store veya feature bazlı slice'lar.
 | i18n | Sadece TR | MVP kapsamı |
 | Takvim kütüphanesi | FullCalendar 6 | Gün/hafta/ay + drag-drop hazır |
 
-## Güncel Uygulama Durumu (Sprint 4 sonrası)
+## Güncel Uygulama Durumu (Sprint 5 sonrası)
 
 ### Tamamlanan modüller
 
@@ -155,7 +155,7 @@ Tek store veya feature bazlı slice'lar.
 | Dashboard | ✅ | `components/dashboard/`, `app/page.tsx` |
 | Görev CRUD | ✅ | `components/tasks/`, `app/tasks/page.tsx` |
 | Takvim + Event CRUD | ✅ | `components/calendar/`, `app/calendar/page.tsx` |
-| Workflow liste + detay (read-only) | 🔶 | `app/workflows/` — Sprint 5 |
+| Workflow CRUD + step yönetimi | ✅ | `components/workflows/`, `app/workflows/` |
 | Hatırlatma liste (read-only) | 🔶 | `app/reminders/page.tsx` — Sprint 6 |
 
 ### Bileşen envanteri
@@ -166,7 +166,8 @@ src/components/
 ├── ui/         Badge, Button, Card, ConfirmDialog, EmptyState, Modal, ProgressBar
 ├── calendar/   CalendarView, EventForm, EventCard
 ├── dashboard/  TodayTasks, UpcomingEvents, ActiveWorkflows, OverdueSection
-└── tasks/      TaskItem, TaskList, TaskForm
+├── tasks/      TaskItem, TaskList, TaskForm
+└── workflows/  WorkflowCard, StepList, StepItem, WorkflowForm
 ```
 
 Detaylı sprint açıklamaları → [`docs/completed/`](./completed/README.md)

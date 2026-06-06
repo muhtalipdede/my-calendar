@@ -64,7 +64,8 @@ my-calendar/
 │   │   ├── ui/             # Button, Modal, Card, Badge...
 │   │   ├── calendar/     # CalendarView, EventForm, EventCard
 │   │   ├── dashboard/      # Dashboard widget'ları
-│   │   └── tasks/          # TaskItem, TaskList, TaskForm
+│   │   ├── tasks/          # TaskItem, TaskList, TaskForm
+│   │   └── workflows/      # WorkflowCard, StepList, WorkflowForm
 │   ├── data/               # Mock JSON dosyaları
 │   ├── hooks/              # useTasks, useEvents...
 │   ├── lib/                # Tipler, utils, mock loader
@@ -81,26 +82,26 @@ my-calendar/
 | 2 | Global state + Dashboard | ✅ Tamamlandı |
 | 3 | Görev CRUD | ✅ Tamamlandı |
 | 4 | Takvim sistemi (FullCalendar) | ✅ Tamamlandı |
-| 5 | Workflow step yönetimi | 🔜 Sıradaki |
-| 6 | Hatırlatmalar | ⏳ Bekliyor |
+| 5 | Workflow CRUD + step yönetimi | ✅ Tamamlandı |
+| 6 | Hatırlatmalar | 🔜 Sıradaki |
 | 7 | Cilalama + MVP tamamlama | ⏳ Bekliyor |
 
 ## MVP Kapsamı
 
 - [x] Takvim: gün / hafta / ay görünümü, event CRUD, sürükle-bırak
 - [x] Görevler: durum, öncelik, opsiyonel deadline, CRUD
-- [ ] Süreçli görevler: step bazlı workflow (liste + detay var, CRUD eksik)
+- [x] Süreçli görevler: step bazlı workflow, CRUD, not ekleme
 - [ ] Hatırlatmalar: event, task ve step bazlı (liste var, oluşturma eksik)
 - [x] Dashboard: bugün, yaklaşan, aktif süreçler, overdue
 
-**MVP ilerlemesi:** ~73% (40/55 madde)
+**MVP ilerlemesi:** ~84% (46/55 madde)
 
 ## Stajyer / Geliştirici Rehberi
 
 **Yeni başlayanlar için okuma sırası:**
 
 1. [`docs/completed/README.md`](./docs/completed/README.md) — Biten sprintlerin detaylı açıklamaları (önce bunu oku!)
-2. [`docs/03-INTERN-TASKS.md`](./docs/03-INTERN-TASKS.md) — Aktif görev listesi → **Sprint 5'ten devam et**
+2. [`docs/03-INTERN-TASKS.md`](./docs/03-INTERN-TASKS.md) — Aktif görev listesi → **Sprint 6'dan devam et**
 3. [`docs/01-ARCHITECTURE.md`](./docs/01-ARCHITECTURE.md) — Mimari ve klasör yapısı
 4. [`docs/02-MOCK-DATA.md`](./docs/02-MOCK-DATA.md) — Mock veri şemaları
 5. [`docs/04-MVP-CHECKLIST.md`](./docs/04-MVP-CHECKLIST.md) — MVP tamamlanma kontrol listesi
